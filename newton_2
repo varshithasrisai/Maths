@@ -1,0 +1,18 @@
+import math
+
+def tofind_C(Th: int, Ta: int) -> int:
+    return Th - Ta
+C_value = tofind_C(80,40)
+
+def tofind_K(tofind_C: int, t: int, Th: int, Ta: int) -> float:
+    return -math.log((Th - Ta) / C_value) / t
+K_value = tofind_K(C_value, 20 , 60, 40)
+
+def temp(t: int, Ta: int, tofind_C_value: int, K_value) -> float:
+    return C_value * math.exp(-K_value * t) + Ta
+
+after_40 = temp(40,40 , C_value, K_value)
+
+print("C value:", C_value)
+print("K value:", K_value)
+print("Temperature of the body after 40 minutes :",after_40 , "degrees")
