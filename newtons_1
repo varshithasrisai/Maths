@@ -1,0 +1,18 @@
+import math
+
+def tofind_C(Th: int, Ta: int) -> int:
+    return Th - Ta
+C_value = tofind_C(100,30)
+
+def tofind_K(tofind_C: int, t: int, Th: int, Ta: inwt) -> float:
+    return -math.log((Th - Ta) / C_value) / t
+K_value = tofind_K(C_value, 15 , 70, 30)
+
+def tofind_time(Th: int, Ta: int, tofind_C_value: int, K_value) -> float:
+    return -math.log((Th - Ta) / C_value) / K_value
+
+time_taken = tofind_time(40, 30, C_value, K_value)
+
+print("C value:", C_value)
+print("K value:", K_value)
+print("Time taken for temperature to drop to 40°C:", time_taken, "minutes")
